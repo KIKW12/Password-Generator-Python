@@ -21,3 +21,7 @@ calcular todos los números primos hasta el límite dado por el usuario. En post
 
 En este avance se transforma el codigo anteriormente presentando a una funcion, para durante el desarrollo del proyecto, sea más fácil acceder a cada una de las partes del código. Se realizó la optimización del proceso para saber si un numero es primo utilizando un patron llamado "El patrón de los números primos" que se presenta de la forma x = 6k + 1 y x = 6k - 1. 
 Un ejemplo de este patrón es x = (6)(1) - 1, siendo x = 5. Como sabemos, 5 es numero primo. 
+
+### Avance 4
+
+Este avance pide la implementación de estrcuturas de decisión, en el código ya se encontraban desde el avance 3, estas estructuras se encuentran dentro de la función "es_primo". Se utilizan para comprar si el numero ingresado o no cumple con algunas condicioes para saber si es primo o no, antes de entrar al proceso de optimización. 
