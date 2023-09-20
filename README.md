@@ -25,3 +25,7 @@ Un ejemplo de este patrón es x = (6)(1) - 1, siendo x = 5. Como sabemos, 5 es n
 ### Avance 4
 
 Este avance pide la implementación de estrcuturas de decisión, en el código ya se encontraban desde el avance 3, estas estructuras se encuentran dentro de la función "es_primo". Se utilizan para comprar si el numero ingresado o no cumple con algunas condicioes para saber si es primo o no, antes de entrar al proceso de optimización. 
+
+### Avance 5
+
+Este avance solicita la implementación de estructuras condicionales, en el código ya se encontraban desde el avance No. 3, dentro de la función "es_primo". Estas se utilizaron para poder iterar por el número límite ingresado por el usuario, utilizando un patrón de los números primos llamado 6k+1. Así mismo se incluye un ciclo for para ir imprimiendo los números primos hasta el límite puesto por el usuario.
