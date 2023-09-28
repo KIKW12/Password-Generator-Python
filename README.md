@@ -29,3 +29,6 @@ Este avance pide la implementación de estrcuturas de decisión, en el código y
 ### Avance 5
 
 Este avance solicita la implementación de estructuras condicionales, en el código ya se encontraban desde el avance No. 3, dentro de la función "es_primo". Estas se utilizaron para poder iterar por el número límite ingresado por el usuario, utilizando un patrón de los números primos llamado 6k+1. Así mismo se incluye un ciclo for para ir imprimiendo los números primos hasta el límite puesto por el usuario.
+
+### Avance 6
+En este avance se realiza una reestructuración total del código, tras haber encontrado la forma más optima de calcular los numeros primos, que es utilizando el patrón 6k+1. También se incorporan la parte de la selección de características de la contraseña. Se utilizan listas para ir almacenando tanto la cadena de numeros primos, así como las contraseñas que pidio el usuario que se generaran. Se utiliza la librería **RANDOM** para escoger un caracter o numero de manera "aleatoria" de las listas que proporciona la librería **STRING**, siendo estos parte del alfabeto ASCII. 
