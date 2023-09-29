@@ -114,7 +114,18 @@ def obtener_primos(cantidad):
 
 
 def main():
+    '''
+    Se crea la lista contraseñas_generadas vacia para almacenar las contraseñas generadas. 
+    '''
+    contraseñas_generadas = []
+
     try:
+        '''
+        Se le pide al usuario que especifique cuantas veces decea ejecutar la generacion de las contraseñas
+        en una sola ejecucion del programa. Lo que permite generar conuntos separados de contraseñas en
+        cada ejecucion. 
+        '''
+        cantidad_ejecuciones = int(input("¿Cuántas veces deseas generar contraseñas?: "))
         '''
         Se le pide al usuario la cantidad de contraseñas que quiera generar
         '''
@@ -150,40 +161,61 @@ def main():
         usar_primos = input("¿Quieres usar números primos? (s/n): ").lower() == 's'
         
         '''
-        Se crea la lista contraseñas_generadas vacia para almacenar las contraseñas generadas. 
+        Este bucle nos permite iterar la generacion de las contraseñas segun la cantidad especificada en 
+        cantidad_ejecuciones. 
         '''
-        contraseñas_generadas = []
+        for _ in range(cantidad_ejecuciones):
+            '''
+            En cada iteracion del bucle, se crea una lista llamada contraseñas_generadas_ejecucion para
+            almacenar las contraceñas generadas en una ejecucion especifica. 
+            '''
+            contraseñas_generadas_ejecucion = []
 
-        '''
-        Se inicia el bucle for que se ejecurara la cantidad que indique cantidad_contraseñas, es decir,
-        la cantidad indicada por el usuario. 
-        '''
-        for _ in range(cantidad_contraseñas):
+            '''
+            Este bucle nos permite generar multiples contraseñas en cada ejecucion, que se almacenaran en 
+            la lista creada anteriormente. 
+            '''
+            for _ in range(cantidad_contraseñas):
+                contraseña_generada = generar_contraseña(longitud, usar_mayusculas, usar_especiales, usar_numeros, usar_primos)
+                
+                '''
+                Despues de generar todas las contraseñas generadas en una ejecución específica, se agrega
+                a la lista principal contraseñas_generadas, creando la estructura de lista anidada. 
+                '''
+                contraseñas_generadas_ejecucion.append(contraseña_generada)
             
             '''
-            En cada iteración el bucle llama a la función generar_contraseña con los parametros ingresados
-            por el usuario. 
+            Despues de generar todas las contraseñas en una ejecucion especifica, la lista donde se 
+            almacenan estas, se agrega a la lista principal. 
             '''
-            contraseña_generada = generar_contraseña(longitud, usar_mayusculas, usar_especiales, usar_numeros, usar_primos)
-            
-            '''
-            La contraseña generada  se guarda en la lista. 
-            '''
-            contraseñas_generadas.append(contraseña_generada)
-        
-        '''
-        Esta linea imprime una linea de texto quer indica que se mostraran las contraseñas generadas. 
-    
-        '''
+            contraseñas_generadas.append(contraseñas_generadas_ejecucion)
+
+
         print("\nContraseñas generadas:")
 
         '''
-        Se inicia un bucle for qie se utiliza para iterar a traves de las contraseñas almacenadas en la
-        lista {contraseñas_generadas.} La funcion enumerate se utiliza para enumerar los elementos de la
-        lista. 
+        El bucle nos permite iterar a traves de las diferentes ejecuciones de la generacion de contraseñas
+        almacenadas en la lista princiapl contraseñas_generadas. La funcion enumerate se utiliza para
+        obtener el tanto indice de i como la ejecucion actual. 
         '''
-        for i, contraseña in enumerate(contraseñas_generadas, start=1):
-            print(f"{i}. {contraseña}")
+        for i, ejecucion in enumerate(contraseñas_generadas, start=1):
+
+            '''
+            En cada iteracion de este bucle se imprime una linea que indica en eque ejecucion se encuentra.
+            '''
+            print(f"Ejecución {i}:")
+
+            '''
+            Este bucle se utiliza para iterar a travez de las siguientes contraseñas generadas en la 
+            ejecucion actual. Se utiliza enumerate para obtener el indice j como la contraseña actual. 
+            '''
+            for j, contraseña in enumerate(ejecucion, start=1):
+
+                '''
+                En cada iteracion de este bucle se imprime una linea que muestra el indice de la contraseña
+                y la contraseña.
+                '''
+                print(f"{j}. {contraseña}")
     except ValueError:
         print("Por favor, ingresa una longitud o cantidad válida.")
 
