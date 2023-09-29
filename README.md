@@ -32,3 +32,6 @@ Este avance solicita la implementación de estructuras condicionales, en el cód
 
 ### Avance 6
 En este avance se realiza una reestructuración total del código, tras haber encontrado la forma más optima de calcular los numeros primos, que es utilizando el patrón 6k+1. También se incorporan la parte de la selección de características de la contraseña. Se utilizan listas para ir almacenando tanto la cadena de numeros primos, así como las contraseñas que pidio el usuario que se generaran. Se utiliza la librería **RANDOM** para escoger un caracter o numero de manera "aleatoria" de las listas que proporciona la librería **STRING**, siendo estos parte del alfabeto ASCII. 
+
+### Avance 7
+En este avance se realiza la implementación de listas anidadas, sirviendo para brindarle más opciones de contraseñas generadas al usuario, ya que podrá decir cuantas veces quiere que se ejecute el código para poder generar las contraseñas que pide. La lista anidada almacena las contraseñas generadas en cada ejecución. La salida se ha modificado para mostrar las contraseñas generadas en cada ejecución junto con su índice de ejecución. Esto permite tener un registro de las contrasñeas en las diferentes ejecuciones del programa.
