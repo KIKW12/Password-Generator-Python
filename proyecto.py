@@ -7,16 +7,20 @@ digitos y caracteres especiales.
 '''
 import string
 
-'''
-La funcion generar_contraseña
-recibe: longitud de la constraseña, usar_mayusculas un booleano que indica si el usuario necesita o no 
-letras mayusculas, usar_especiales un booleano que indica si se deben usar caracteres especiales, 
-usar_numeros un booleano que indica si se deben usar numeros en la contraseña y usar_primos un booleano
-que indica si se deben de utilizar numeros primos en la constraseña.
-regresa: una contraseña cumpliendo con las especificaciones ingresadas por el usuario. 
+"""
+================== Funcion para generacion de contraseña  =====================================
+"""
 
-'''
 def generar_contraseña(longitud, usar_mayusculas, usar_especiales, usar_numeros, usar_primos):
+    '''
+    La funcion generar_contraseña
+    recibe: longitud de la constraseña, usar_mayusculas un booleano que indica si el usuario necesita o no 
+    letras mayusculas, usar_especiales un booleano que indica si se deben usar caracteres especiales, 
+    usar_numeros un booleano que indica si se deben usar numeros en la contraseña y usar_primos un booleano
+    que indica si se deben de utilizar numeros primos en la constraseña.
+    regresa: una contraseña cumpliendo con las especificaciones ingresadas por el usuario. 
+    '''
+
     '''
     Se crea la variable caracteres, que solo contiene letras del alfabeto ASCII en mayusculas y minusculas.
     '''
@@ -56,13 +60,18 @@ def generar_contraseña(longitud, usar_mayusculas, usar_especiales, usar_numeros
     contraseña = ''.join(random.choice(caracteres) for _ in range(longitud))
     return contraseña
 
-'''
-La funcion obtener_primos
-recibe: una cantidad de numeros primos para generar
-devuelve: los numeros primos se devuelven en cadena y se concatenan para formar una sola cadena que se
-devuelve. 
-'''
+"""
+================== funcion de generacion de numeros primos para la contraseña  =====================================
+"""
+
 def obtener_primos(cantidad):
+    '''
+    La funcion obtener_primos
+    recibe: una cantidad de numeros primos para generar
+    devuelve: los numeros primos se devuelven en cadena y se concatenan para formar una sola cadena que se
+    devuelve. 
+    '''
+
     '''
     Se inicializa una lista vacia que contendra los numeros primos encontrados.
     '''
@@ -84,7 +93,6 @@ def obtener_primos(cantidad):
     'cantidad'.
     '''
     while len(primos) < cantidad:
-
         '''
         Este condicional comprueba si el numero actual (numero) es primo. Verifica que numero no sea
         divisible por un numero anterior en la lista primos. 
@@ -112,13 +120,11 @@ def obtener_primos(cantidad):
     '''
     return ''.join(str(p) for p in primos)
 
-
 def main():
     '''
     Se crea la lista contraseñas_generadas vacia para almacenar las contraseñas generadas. 
     '''
     contraseñas_generadas = []
-
     try:
         '''
         Se le pide al usuario que especifique cuantas veces decea ejecutar la generacion de las contraseñas
