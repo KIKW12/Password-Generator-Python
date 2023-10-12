@@ -35,3 +35,93 @@ En este avance se realiza una reestructuración total del código, tras haber en
 
 ### Avance 7
 En este avance se realiza la implementación de listas anidadas, sirviendo para brindarle más opciones de contraseñas generadas al usuario, ya que podrá decir cuantas veces quiere que se ejecute el código para poder generar las contraseñas que pide. La lista anidada almacena las contraseñas generadas en cada ejecución. La salida se ha modificado para mostrar las contraseñas generadas en cada ejecución junto con su índice de ejecución. Esto permite tener un registro de las contrasñeas en las diferentes ejecuciones del programa.
+
+## Incorporación de API de Python
+
+A lo largo del desarrollo de este proyecto, se utilizaron 2 librerias propias de Python, siendo estas **Random** y **String** para realizar todo lo necesario en la generación de contraseñas.
+### Librería RANDOM
+Para el desarrollo del presente código se utlizó principalmente la instrucción *random.choice*, la cual retorna pseuodoaleatoriamente un elemento de una secuencia *seq* no vacía. 
+
+https://docs.python.org/es/3.12/library/random.html?highlight=random%20choice#random.choice
+
+### Libreria STRING
+Para el desarrollo del presente código se utilizaron las siguientes funciones presentes en esta librería:
+
+  •string.ascii_lowercase --> Las letras minúsculas 'abcdefghijklmnopqrstuvwxyz'. Este valor es independiente de la configuración regional y no cambiará.
+  
+  •string.ascii_uppercase --> Las letras mayúsculas 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'. Este valor es independiente de la configuración regional y no cambiará.
+  
+  •string.punctuation --> Esta función importa una cadena de caracteres ASCII que se consideran caracteres de puntuación en la configuración regional.
+  
+  •string.digits --> La cadena '0123456789'.
+
+  https://docs.python.org/es/3.12/library/string.html?highlight=string#module-string
+
+## CORRECCIONES
+Sub-Competencia: 
+	componente: usa la forma más a apropiada al problema para guardar los datos (listas, variable, tipo de dato, etc...) (avance 6 y avance 7)
+
+Error original: No recordé el mandar el avance del proyecto para el avance 6, más sin embargo en el avance 7 ya contaba tanco con las listas y listas anidadas.  
+
+Cambio realizado: Agregué los elementos faltantes para cumplir con el avance 6 y 7 y obtener una buena retroalimentación. 
+_Avance 6_
+
+    '''
+    Se inicializa una lista vacia que contendra los numeros primos encontrados.
+    '''
+    primos = []
+    '''
+    Se incia la variable numero en 5, ya que los primeros numeros primos en el patron 6k±1 son 5 y 7.
+    '''
+    numero = 5 
+
+    '''
+    La variable paso se inicia en 2, esto determina el cambio entre los numeros 6k-1 y 6k+1 alternadamente,
+    se comienza en 2 que representa 6k-1.
+    '''
+    paso = 2  
+    
+    '''
+    Este bucle while se ejecutara hasta que hayamos encontrado la cantidad de numros primos especificados
+    'cantidad'.
+    '''
+    while len(primos) < cantidad:
+        '''
+        Este condicional comprueba si el numero actual (numero) es primo. Verifica que numero no sea
+        divisible por un numero anterior en la lista primos. 
+        '''
+        if all(numero % p != 0 for p in primos):
+            '''
+            Si el numero actual que estamos analizando pasa la prueba de ser primo se agrega a la lista. 
+            '''
+            primos.append(numero)
+
+Líneas de código donde se ve la corrección: 78 a 104
+
+_Avance 7_
+
+    '''
+    Se crea la lista contraseñas_generadas vacia para almacenar las contraseñas generadas. 
+    '''
+    contraseñas_generadas = []
+    
+            '''
+            Este bucle nos permite generar multiples contraseñas en cada ejecucion, que se almacenaran en 
+            la lista creada anteriormente. 
+            '''
+            for _ in range(cantidad_contraseñas):
+                contraseña_generada = generar_contraseña(longitud, usar_mayusculas, usar_especiales, usar_numeros, usar_primos)
+                
+                '''
+                Despues de generar todas las contraseñas generadas en una ejecución específica, se agrega
+                a la lista principal contraseñas_generadas, creando la estructura de lista anidada. 
+                '''
+                contraseñas_generadas_ejecucion.append(contraseña_generada)
+            
+            '''
+            Despues de generar todas las contraseñas en una ejecucion especifica, la lista donde se 
+            almacenan estas, se agrega a la lista principal. 
+            '''
+            contraseñas_generadas.append(contraseñas_generadas_ejecucion)
+
+Líneas de código donde se ve la corrección: 127, y 184 a 197
